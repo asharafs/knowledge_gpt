@@ -25,16 +25,8 @@ def set_openai_api_key(api_key: str):
 st.set_page_config(page_title="TMKN-GPT", page_icon="📖", layout="wide")
 st.header("📖TMKN-GPT")
 
-def add_logo(logo_path, width, height):
-    """Read and return a resized logo"""
-    logo = Image.open(logo_path)
-    modified_logo = logo.resize((width, height))
-    return modified_logo
-
-
-
 with st.sidebar:
-    st.image(add_logo(logo_path="dot-img05.png", width=60, height=60))
+    st.image(Image.open("dot-img05.png"))
     st.markdown("# About")
     st.markdown(
         "📖TMKN-GPT allows you to ask questions about your "
