@@ -11,7 +11,7 @@ from utils import (
     wrap_text_in_html,
 )
 from openai.error import OpenAIError
-
+from PIL import Image
 
 def clear_submit():
     st.session_state["submit"] = False
@@ -25,33 +25,16 @@ def set_openai_api_key(api_key: str):
 st.set_page_config(page_title="TMKN-GPT", page_icon="📖", layout="wide")
 st.header("📖TMKN-GPT")
 
-def add_logo():
-    st.markdown(
-        """
-        <style>
-            [data-testid="stSidebarNav"] {
-                background-image: url(https://www.tamkeen.bh/wp-content/uploads/2022/04/brand-Template-v2-01-2.png);
-                background-repeat: no-repeat;
-                padding-top: 120px;
-                background-position: 20px 20px;
-            }
-            [data-testid="stSidebarNav"]::before {
-                content: "Tamkeen";
-                margin-left: 20px;
-                margin-top: 20px;
-                font-size: 30px;
-                position: relative;
-                top: 100px;
-            }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
+def add_logo(logo_path, width, height):
+    """Read and return a resized logo"""
+    logo = Image.open(logo_path)
+    modified_logo = logo.resize((width, height))
+    return modified_logo
 
 
 
 with st.sidebar:
-    add_logo()
+    st.sidebar.image(add_logo(logo_path="https://www.tamkeen.bh/wp-content/uploads/2021/12/dot-img05.png", width=60, height=60))
     st.markdown("# About")
     st.markdown(
         "📖TMKN-GPT allows you to ask questions about your "
