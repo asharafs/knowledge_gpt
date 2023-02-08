@@ -34,7 +34,7 @@ def add_logo(logo_path, width, height):
 
 
 with st.sidebar:
-    st.sidebar.image(add_logo(logo_path="https://www.tamkeen.bh/wp-content/uploads/2021/12/dot-img05.png", width=60, height=60))
+    st.image(add_logo(logo_path="https://www.tamkeen.bh/wp-content/uploads/2021/12/dot-img05.png", width=60, height=60))
     st.markdown("# About")
     st.markdown(
         "📖TMKN-GPT allows you to ask questions about your "
