@@ -12,6 +12,7 @@ from utils import (
 )
 from openai.error import OpenAIError
 from PIL import Image
+import requests
 
 def clear_submit():
     st.session_state["submit"] = False
@@ -26,8 +27,8 @@ st.set_page_config(page_title="TMKN-GPT", page_icon="📖", layout="wide")
 st.header("📖TMKN-GPT")
 
 with st.sidebar:
-    image = Image.open("dot-img05.png")
-    st.image(image)
+    im = Image.open(requests.get("https://www.tamkeen.bh/wp-content/uploads/2021/12/dot-img05.png", stream=True).raw)
+    st.image(im)
     st.markdown("# About")
     st.markdown(
         "📖TMKN-GPT allows you to ask questions about your "
