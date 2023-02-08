@@ -76,7 +76,7 @@ with st.sidebar:
         set_openai_api_key(api_key_input)
 
     st.markdown("---")
-    st.markdown("Made by [mmz_001](https://twitter.com/mm_sasmitha)")
+    st.markdown("Data Science")
 
 uploaded_file = st.file_uploader(
     "Upload a pdf, docx, or txt file",
