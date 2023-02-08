@@ -13,6 +13,7 @@ from utils import (
 from openai.error import OpenAIError
 from PIL import Image
 import requests
+from io import BytesIO
 
 def clear_submit():
     st.session_state["submit"] = False
@@ -26,9 +27,11 @@ def set_openai_api_key(api_key: str):
 st.set_page_config(page_title="TMKN-GPT", page_icon="📖", layout="wide")
 st.header("📖TMKN-GPT")
 
+response = requests.get("https://www.tamkeen.bh/wp-content/uploads/2021/12/dot-img05.png")
+img = Image.open(BytesIO(response.content))
+
 with st.sidebar:
-    im = Image.open(requests.get("https://www.tamkeen.bh/wp-content/uploads/2021/12/dot-img05.png", stream=True).raw)
-    st.image(im)
+    st.image(img)
     st.markdown("# About")
     st.markdown(
         "📖TMKN-GPT allows you to ask questions about your "
