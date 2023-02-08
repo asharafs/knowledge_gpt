@@ -48,9 +48,10 @@ def add_logo():
         unsafe_allow_html=True,
     )
 
-add_logo()
+
 
 with st.sidebar:
+    add_logo()
     st.markdown("# About")
     st.markdown(
         "📖TMKN-GPT allows you to ask questions about your "
