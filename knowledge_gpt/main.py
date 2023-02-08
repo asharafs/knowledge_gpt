@@ -26,7 +26,8 @@ st.set_page_config(page_title="TMKN-GPT", page_icon="📖", layout="wide")
 st.header("📖TMKN-GPT")
 
 with st.sidebar:
-    st.image(Image.open("dot-img05.png"))
+    image = Image.open("dot-img05.png")
+    st.image(image)
     st.markdown("# About")
     st.markdown(
         "📖TMKN-GPT allows you to ask questions about your "
