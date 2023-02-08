@@ -22,7 +22,17 @@ def clear_submit():
 def set_openai_api_key(api_key: str):
     st.session_state["OPENAI_API_KEY"] = api_key
 
-
+# modify the background color of the whole page to #1D1B34
+st.markdown(
+    f"""
+    <style>
+    .reportview-container .main .block-container{{
+        background-color: #1D1B34;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
     
 st.set_page_config(page_title="TMKN-GPT", page_icon="📖", layout="wide")
 st.header("📖TMKN-GPT")
