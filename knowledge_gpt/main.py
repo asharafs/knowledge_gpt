@@ -28,7 +28,7 @@ st.set_page_config(page_title="TMKN-GPT", page_icon="📖", layout="wide")
 st.header("📖TMKN-GPT")
 
 with st.sidebar:
-    st.image("https://www.tamkeen.bh/wp-content/uploads/2021/12/dot-img05.png")
+    st.image("https://www.tamkeen.bh/wp-content/uploads/2021/12/dot-img05.png", width=60,length=60)
     st.markdown("# About")
     st.markdown(
         "📖TMKN-GPT allows you to ask questions about your "
