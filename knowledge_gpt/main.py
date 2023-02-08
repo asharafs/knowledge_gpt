@@ -27,11 +27,8 @@ def set_openai_api_key(api_key: str):
 st.set_page_config(page_title="TMKN-GPT", page_icon="📖", layout="wide")
 st.header("📖TMKN-GPT")
 
-response = requests.get("https://www.tamkeen.bh/wp-content/uploads/2021/12/dot-img05.png")
-img = Image.open(BytesIO(response.content))
-
 with st.sidebar:
-    st.image(img)
+    st.image("https://www.tamkeen.bh/wp-content/uploads/2021/12/dot-img05.png")
     st.markdown("# About")
     st.markdown(
         "📖TMKN-GPT allows you to ask questions about your "
