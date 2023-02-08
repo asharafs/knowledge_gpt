@@ -20,6 +20,11 @@ def clear_submit():
 def set_openai_api_key(api_key: str):
     st.session_state["OPENAI_API_KEY"] = api_key
 
+
+    
+st.set_page_config(page_title="TMKN-GPT", page_icon="📖", layout="wide")
+st.header("📖TMKN-GPT")
+
 def add_logo():
     st.markdown(
         """
@@ -31,7 +36,7 @@ def add_logo():
                 background-position: 20px 20px;
             }
             [data-testid="stSidebarNav"]::before {
-                content: "My Company Name";
+                content: "Tamkeen";
                 margin-left: 20px;
                 margin-top: 20px;
                 font-size: 30px;
@@ -44,9 +49,6 @@ def add_logo():
     )
 
 add_logo()
-    
-st.set_page_config(page_title="TMKN-GPT", page_icon="📖", layout="wide")
-st.header("📖TMKN-GPT")
 
 with st.sidebar:
     st.markdown("# About")
